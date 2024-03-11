@@ -29,7 +29,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=10
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
+	ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="config.ini"
 
 	grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
 	mv "$install_dir/server-package.json" "$install_dir/package.json"
